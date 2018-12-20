@@ -1,8 +1,12 @@
-<form>
+<form 
+  [formGroup]="createBook"
+  (ngSubmit)="onCreateBook()"
+>
   <label for="nameOfBook">Name of Book</label>
   <input 
     type="text"
     name="nameOfBook"
+    formControlName="nameOfBook"
     required
   >
 
@@ -10,12 +14,14 @@
   <input 
     type="text"
     name="author"
+    formControlName="author"
     required
   >
 
   <label for="genre">Genre</label>
   <select
     name="genre"
+    formControlName="genre"
     required
   >
   <option>Fiction</option>
@@ -28,12 +34,14 @@
   <input 
     type="number"
     name="pubYear"
+    formControlName="pubYear"
     required
   >
 
   <label for="rating">Rating</label>
   <select
     name="rating"
+    formControlName="rating"
     required
   >
     <option>1 stars</option>
@@ -47,6 +55,6 @@
     [disabled]="!useBtn"
     type="submit"
   >
-    Add Book
+    {{ useBtn === false ? 'This About a Book' : 'Add Book'}}
   </button>
 </form>
