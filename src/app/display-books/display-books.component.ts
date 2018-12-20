@@ -1,4 +1,4 @@
-import {Component} from '@angular/core'
+import {Component, Input} from '@angular/core'
 
 @Component ({
     selector: 'app-display-books',
@@ -8,4 +8,15 @@ import {Component} from '@angular/core'
 
 })
 
-export class DisplayBooksComponent {}
+export class DisplayBooksComponent {
+    scroll = {}
+
+    @Input()
+    get livro(): any {
+        return this.scroll
+    }
+
+    set livro(script : any) {
+        this.scroll = (script)
+    }
+}

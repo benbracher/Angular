@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DisplayBooksComponent } from './display-books/display-books.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { DatabaseService } from './services/database.service';
 
 // ng g c "" in command line makes new terminal
 
@@ -17,9 +19,10 @@ import { CreateBookComponent } from './create-book/create-book.component';
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DatabaseService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

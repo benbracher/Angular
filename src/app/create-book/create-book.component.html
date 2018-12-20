@@ -58,3 +58,16 @@
     {{ useBtn === false ? 'This About a Book' : 'Add Book'}}
   </button>
 </form>
+
+<app-display-books
+  *ngFor="let individualBook of books"
+  [livro]="individualBook"
+></app-display-books>
+
+<!-- <div *ngIf="books.length !== 0; else noBook">
+  <p *ngFor="let book of books">{{ book.nameOfBook }}, by {{ book.author }}. A {{ book.genre }} book, written in {{ book.pubYear}}. It is {{ book.rating }}.</p>
+</div>
+
+<ng-template #noBook>
+  <p>No Book Created</p>
+</ng-template> -->

@@ -25,10 +25,15 @@ export class CreateBookComponent implements OnInit {
       pubYear: new FormControl(),
       rating: new FormControl()
     })
+
+    this.onFindBooks()
   }
 
   onCreateBook() : void{
     this.books.push(this.createBook.value)
   }
 
+  onFindBooks(): void {
+
+  }
 }
